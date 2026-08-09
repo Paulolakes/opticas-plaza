@@ -157,3 +157,14 @@ h3 { font-size: 1.35rem; }
   :root { --muted: #27383a; --line: #728284; }
   .hero-media::after { background: rgba(0,0,0,.82); }
 }
+
+/* E-E-A-T trust section — paso 4 seo-page audit */
+.trust-section { background: var(--mist); }
+.trust-inner { }
+.eeat-list { display: grid; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.eeat-list li { padding: 1.5rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-md); }
+.eeat-list strong { display: block; margin-bottom: .4rem; font-size: 1.05rem; color: var(--petrol); }
+.eeat-list p { margin: 0; color: var(--muted); font-size: .95rem; }
+@media (min-width: 48rem) {
+  .eeat-list { grid-template-columns: repeat(3, 1fr); }
+}

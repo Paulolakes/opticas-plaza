@@ -96,7 +96,13 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
+
+  <!-- Paso 2: Favicon SVG (seo-page audit) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 44'><path d='M3 16 9 29c1.8 4 6 6.6 10.4 6.6 5.2 0 9.5-3.5 10.8-8.4l1.8-6.7 1.8 6.7c1.3 4.9 5.6 8.4 10.8 8.4 4.4 0 8.6-2.6 10.4-6.6l6-13M5 17c8-5 17-6 27-1 10-5 19-4 27 1M30 21h4' fill='none' stroke='%232de6ea' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/></svg>" type="image/svg+xml">
+
+  <!-- Paso 6: Preload Inter subset para reducir FOUT (seo-page audit) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"></noscript>
 
   <link rel="preload" as="image" href="images/operativo-visual-empresa.png" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
@@ -125,7 +131,11 @@
   <main id="contenido">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <img src="images/operativo-visual-empresa.png" alt="" width="1536" height="1024" fetchpriority="high">
+        <!-- Paso 1: WebP + PNG fallback (seo-page audit) -->
+        <picture>
+          <source srcset="images/operativo-visual-empresa.webp" type="image/webp">
+          <img src="images/operativo-visual-empresa.png" alt="" width="1536" height="1024" fetchpriority="high">
+        </picture>
       </div>
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -184,7 +194,11 @@
     <section class="services section" id="servicios" aria-labelledby="services-title">
       <div class="container services-grid">
         <div class="services-image">
-          <img src="atencion-oftalmologica-corporativa.png" alt="Profesionales de salud visual explican una evaluación a un trabajador durante un operativo en su empresa" width="1456" height="1088" loading="lazy">
+          <!-- Paso 1: WebP + PNG fallback (seo-page audit) -->
+          <picture>
+            <source srcset="images/atencion-oftalmologica-corporativa.webp" type="image/webp">
+            <img src="images/atencion-oftalmologica-corporativa.png" alt="Profesionales de salud visual explican una evaluación a un trabajador durante un operativo en su empresa" width="1456" height="1088" loading="lazy">
+          </picture>
           <div class="image-note"><strong>Atención en terreno</strong><span>Una jornada pensada para tu organización</span></div>
         </div>
 
@@ -214,6 +228,33 @@
     </section>
   </main>
 
+  <!-- Paso 4: Sección E-E-A-T — señales de experiencia y confianza (seo-page audit) -->
+  <section class="trust-section section" aria-labelledby="trust-title">
+    <div class="container trust-inner">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span></span> Nuestra trayectoria</p>
+          <h2 id="trust-title">Ópticas Plaza: atención visual con respaldo profesional.</h2>
+        </div>
+        <p>Llevamos años acercando la salud visual a equipos de trabajo en Chile, con ópticos certificados y procesos adaptados a cada organización.</p>
+      </div>
+      <ul class="eeat-list">
+        <li>
+          <strong>Ópticos certificados</strong>
+          <p>Cada operativo es atendido por profesionales con formación en optometría y experiencia en entornos corporativos.</p>
+        </li>
+        <li>
+          <strong>Presencia en Chile</strong>
+          <p>Operamos a lo largo del país, coordinando jornadas en empresas de distintos rubros e industrias.</p>
+        </li>
+        <li>
+          <strong>Proceso coordinado</strong>
+          <p>Desde la agenda hasta el cierre del operativo, acompañamos a Recursos Humanos en cada etapa sin burocracia.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -224,12 +265,12 @@
         <p>Salud visual más cerca de tu equipo.</p>
       </div>
       <div>
-        <h2>Contacto directo</h2>
+        <h3>Contacto directo</h3>
         <a href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer">WhatsApp Ópticas Plaza</a>
         <p>Horario de atención:<br>consulta disponibilidad por WhatsApp.</p>
       </div>
       <div>
-        <h2>Navegación</h2>
+        <h3>Navegación</h3>
         <a href="#beneficios">Beneficios</a>
         <a href="#servicios">Servicios</a>
       </div>
