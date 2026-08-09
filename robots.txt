@@ -1,0 +1,24 @@
+# seo-technical: Allow search indexing, manage AI training crawlers
+# Blocking training crawlers does NOT affect search indexing
+
+# OpenAI — training (block) vs browsing (allow)
+User-agent: GPTBot
+Disallow: /
+
+# Google — Gemini training (block), does NOT affect Googlebot/Search
+User-agent: Google-Extended
+Disallow: /
+
+# ByteDance
+User-agent: Bytespider
+Disallow: /
+
+# Common Crawl (open dataset for AI training)
+User-agent: CCBot
+Disallow: /
+
+# All other crawlers (Googlebot, Bingbot, etc.) — full access
+User-agent: *
+Allow: /
+
+Sitemap: https://opticasplaza.cl/sitemap.xml
