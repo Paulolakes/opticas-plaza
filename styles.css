@@ -72,12 +72,11 @@ h3 { font-size: 1.35rem; }
 .section-heading h2 { max-width: 15ch; margin-bottom: 0; }
 .section-heading > p { max-width: 30rem; margin: 0; align-self: end; color: var(--muted); font-size: 1.05rem; }
 .benefit-grid { display: grid; gap: 1rem; }
-.benefit-card { position: relative; min-height: 33rem; display: flex; flex-direction: column; padding: 1.6rem; overflow: hidden; background: var(--mist); border: 1px solid var(--line); border-radius: var(--radius-md); }
+.benefit-card { position: relative; display: flex; flex-direction: column; padding: 1.6rem; overflow: hidden; background: var(--mist); border: 1px solid var(--line); border-radius: var(--radius-md); }
 .benefit-card.featured { background: var(--aqua); border-color: var(--aqua); }
-.benefit-photo { width: calc(100% + 3.2rem); height: 14rem; margin: -1.6rem -1.6rem 1.35rem; object-fit: cover; object-position: center; }
-.icon-box { display: grid; width: 3.5rem; height: 3.5rem; margin-bottom: auto; place-items: center; background: var(--white); border-radius: 50%; }
+.benefit-photo { width: calc(100% + 3.2rem); aspect-ratio: 4 / 3; height: auto; margin: -1.6rem -1.6rem 1.35rem; object-fit: cover; object-position: center; }
+.icon-box { display: grid; width: 3.5rem; height: 3.5rem; place-items: center; background: var(--white); border-radius: 50%; }
 .icon-box svg { width: 1.8rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.card-number { position: absolute; top: 1.7rem; right: 1.7rem; color: var(--petrol); font-size: .75rem; font-weight: 900; }
 .benefit-card h3 { margin: 2rem 0 .7rem; }
 .benefit-card > p:last-child { margin: 0; color: var(--muted); }
 .benefit-card.featured > p:last-child { color: #173d40; }
