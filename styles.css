@@ -74,7 +74,8 @@ h3 { font-size: 1.35rem; }
 .benefit-grid { display: grid; gap: 1rem; }
 .benefit-card { position: relative; display: flex; flex-direction: column; padding: 1.6rem; overflow: hidden; background: var(--mist); border: 1px solid var(--line); border-radius: var(--radius-md); }
 .benefit-card.featured { background: var(--aqua); border-color: var(--aqua); }
-.benefit-photo { width: calc(100% + 3.2rem); aspect-ratio: 4 / 3; height: auto; margin: -1.6rem -1.6rem 1.35rem; object-fit: cover; object-position: center; }
+.benefit-photo-wrapper { display: block; width: calc(100% + 3.2rem); margin: -1.6rem -1.6rem 1.35rem; overflow: hidden; }
+.benefit-photo { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; object-position: center; }
 .icon-box { display: grid; width: 3.5rem; height: 3.5rem; place-items: center; background: var(--white); border-radius: 50%; }
 .icon-box svg { width: 1.8rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .benefit-card h3 { margin: 2rem 0 .7rem; }
@@ -84,8 +85,8 @@ h3 { font-size: 1.35rem; }
 .services { background: var(--ink); color: var(--white); }
 .services-grid { display: grid; gap: 3rem; }
 .services-image { position: relative; min-height: 28rem; overflow: hidden; border-radius: var(--radius-lg); }
-.services-image img { width: 100%; height: 100%; position: absolute; object-fit: cover; }
-.image-note { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; display: grid; padding: 1rem 1.1rem; color: var(--ink); background: rgba(255,255,255,.94); border-radius: var(--radius-sm); box-shadow: var(--shadow); }
+.services-image picture, .services-image img { width: 100%; height: 100%; position: absolute; object-fit: cover; }
+.image-note { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; display: grid; padding: 1rem 1.1rem; color: var(--ink); background: rgba(255,255,255,.94); border-radius: var(--radius-sm); box-shadow: var(--shadow); z-index: 2; }
 .image-note strong { font-size: .9rem; }
 .image-note span { color: var(--muted); font-size: .78rem; }
 .services-copy h2 { max-width: 12ch; margin-bottom: 1.3rem; }
@@ -97,6 +98,19 @@ h3 { font-size: 1.35rem; }
 .service-list h3 { margin-bottom: .4rem; font-size: 1.15rem; }
 .service-list p { margin: 0; color: #aabcbc; font-size: .94rem; }
 .button-dark { color: var(--ink); background: var(--aqua); }
+
+/* FAQ Section */
+.faq { background: var(--mist); }
+.faq-accordion { display: grid; gap: 1rem; max-width: 54rem; margin-inline: auto; }
+.faq-item { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; transition: border-color var(--ease), box-shadow var(--ease); }
+.faq-item[open] { border-color: var(--petrol); box-shadow: 0 .5rem 1.5rem rgba(9, 18, 19, .06); }
+.faq-summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.4rem 1.6rem; cursor: pointer; list-style: none; user-select: none; }
+.faq-summary::-webkit-details-marker { display: none; }
+.faq-summary h3 { margin: 0; font-size: 1.15rem; font-weight: 800; color: var(--ink); line-height: 1.3; }
+.faq-icon { display: grid; width: 2rem; height: 2rem; place-items: center; background: var(--aqua-pale); color: var(--petrol); border-radius: 50%; font-size: 1.3rem; font-weight: 800; line-height: 1; transition: transform var(--ease), background var(--ease); flex-shrink: 0; }
+.faq-item[open] .faq-icon { transform: rotate(45deg); background: var(--aqua); color: var(--ink); }
+.faq-content { padding: 0 1.6rem 1.4rem; color: var(--muted); font-size: 1rem; line-height: 1.65; }
+.faq-content p { margin: 0; }
 
 .final-cta { position: relative; padding: 5rem 0; overflow: hidden; background: var(--aqua); }
 .final-cta::after { content: ""; position: absolute; right: -7rem; bottom: -10rem; width: 24rem; height: 24rem; border: 3rem solid rgba(255,255,255,.28); border-radius: 50%; }
@@ -116,6 +130,12 @@ h3 { font-size: 1.35rem; }
 .site-footer p { margin-bottom: 0; }
 .footer-bottom { display: flex; flex-direction: column; gap: .25rem; margin-top: 3rem; padding-top: 1.3rem; border-top: 1px solid #293032; font-size: .8rem; }
 
+/* Botón Flotante Móvil de WhatsApp */
+.floating-whatsapp { position: fixed; right: 1rem; bottom: 1.2rem; z-index: 990; }
+.floating-whatsapp-btn { display: inline-flex; align-items: center; gap: .6rem; padding: .85rem 1.25rem; background: #25D366; color: #fff; border-radius: 999px; text-decoration: none; font-weight: 900; font-size: .9rem; box-shadow: 0 1rem 2.5rem rgba(0,0,0,.25); transition: transform var(--ease), box-shadow var(--ease); }
+.floating-whatsapp-btn svg { width: 1.4rem; height: 1.4rem; fill: currentColor; }
+.floating-whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 1.2rem 3rem rgba(0,0,0,.35); }
+
 @media (min-width: 36rem) {
   .container { width: min(calc(100% - 3rem), var(--container)); }
   .hero-actions { flex-direction: row; align-items: center; }
@@ -133,9 +153,10 @@ h3 { font-size: 1.35rem; }
   .section-heading { grid-template-columns: 1.4fr .6fr; align-items: end; margin-bottom: 3.5rem; }
   .benefit-grid { grid-template-columns: repeat(3, 1fr); }
   .benefit-card { padding: 2rem; }
-  .benefit-photo { width: calc(100% + 4rem); margin: -2rem -2rem 1.5rem; }
+  .benefit-photo-wrapper { width: calc(100% + 4rem); margin: -2rem -2rem 1.5rem; }
   .footer-grid { grid-template-columns: 1.5fr 1fr .7fr; }
   .footer-bottom { flex-direction: row; justify-content: space-between; }
+  .floating-whatsapp { display: none; }
 }
 
 @media (min-width: 62rem) {
@@ -150,7 +171,7 @@ h3 { font-size: 1.35rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: .01ms !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
 @media (prefers-contrast: more) {
