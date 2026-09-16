@@ -38,6 +38,7 @@
     ],
     "frameworks": [
       "Vanilla Web (Zero-Framework / Zero-Build)",
+      "Cloudflare Workers (Static Assets)",
       "CSS Custom Properties",
       "WebP / Responsive Images",
       "Schema.org JSON-LD",
@@ -47,7 +48,7 @@
       "Zero external runtime JavaScript libraries or framework dependencies",
       "Mobile-first responsive layout with fluid clamp() typography and CSS Grid",
       "Direct WhatsApp click-to-chat integration (wa.me) for instant quote requests",
-      "Strict robots.txt Disallow directives for AI training crawlers (GPTBot, Google-Extended, Bytespider, CCBot)",
+      "Strict robots.txt Disallow directives for AI training crawlers (GPTBot, Google-Extended, ClaudeBot, Bytespider, CCBot)",
       "External links must enforce rel=\"noopener noreferrer\" to prevent reverse tabnabbing",
       "Images must define explicit width/height and fetchpriority/lazy loading to eliminate CLS",
       "Full accessibility compliance with prefers-reduced-motion and prefers-contrast media queries"
