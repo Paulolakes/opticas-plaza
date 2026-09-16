@@ -9,6 +9,10 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
+# Anthropic — training (block)
+User-agent: ClaudeBot
+Disallow: /
+
 # ByteDance
 User-agent: Bytespider
 Disallow: /

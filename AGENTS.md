@@ -13,38 +13,53 @@ El sitio actúa como el canal principal de adquisición y conversión B2B para l
 2. **Canal de Conversión Directo (WhatsApp Click-to-Chat):** Enlaces directos a WhatsApp Business (`https://wa.me/message/ECLLEMER5KLGH1`) integrados estratégicamente para cotización y coordinación ágil sin formularios tediosos.
 3. **Pilares de Beneficios (Card-Based):** 3 tarjetas modulares destacadas (Atención en terreno, Coordinación sencilla, Beneficio concreto).
 4. **Desglose del Operativo:** Fases estructuradas del servicio (Evaluación visual, Asesoría óptica personalizada, Gestión de la jornada).
-5. **Gobernanza SEO y Crawlers de IA:** Directivas estrictas en [`robots.txt`](./robots.txt) permitiendo indexación a motores de búsqueda tradicionales (Googlebot, Bingbot) y bloqueando crawlers de entrenamiento de modelos de IA (`GPTBot`, `Google-Extended`, `Bytespider`, `CCBot`).
+5. **Gobernanza SEO y Crawlers de IA:** Directivas estrictas en [`robots.txt`](./robots.txt) permitiendo indexación a motores de búsqueda tradicionales (Googlebot, Bingbot) y bloqueando crawlers de entrenamiento de modelos de IA (`GPTBot`, `Google-Extended`, `ClaudeBot`, `Bytespider`, `CCBot`).
 
 ---
 
 ## 2. Arquitectura Técnica y Principios de Diseño
 
-El proyecto sigue una arquitectura **Zero-Dependency Vanilla Web** (sin frameworks pesados, sin paso de build obligatorio, carga instantánea):
+El proyecto sigue una arquitectura **Zero-Dependency Vanilla Web** desplegada en **Cloudflare Workers** (Workers Static Assets):
 
 ```text
 ├── .agents/
 │   └── skills/                     # Habilidades AAS instaladas a nivel de proyecto (39 skills)
 ├── images/
-│   ├── atencion-oftalmologica-corporativa.webp # Imagen optimizada de servicios
-│   ├── atencion-oftalmologica-corporativa.png
-│   ├── operativo-visual-empresa.webp           # Imagen hero optimizada
-│   └── operativo-visual-empresa.png
+│   ├── atencion-oftalmologica-corporativa.webp # Imagen optimizada de servicios (~78 KB)
+│   ├── atencion-oftalmologica-corporativa.png  # Fallback PNG
+│   ├── beneficio-bienestar-v2.webp             # Imagen optimizada beneficio bienestar (~94 KB)
+│   ├── beneficio-bienestar-v2.png              # Fallback PNG
+│   ├── beneficio-coordinacion-v2.webp          # Imagen optimizada beneficio coordinación (~94 KB)
+│   ├── beneficio-coordinacion-v2.png           # Fallback PNG
+│   ├── beneficio-empresa-v2.webp               # Imagen optimizada beneficio empresa (~101 KB)
+│   ├── beneficio-empresa-v2.png                # Fallback PNG
+│   ├── operativo-visual-empresa.webp           # Imagen hero optimizada (~71 KB)
+│   └── operativo-visual-empresa.png            # Fallback PNG y OpenGraph
+├── _headers                        # Cabeceras de seguridad (CSP, HSTS, X-Frame) y caché para Cloudflare
+├── 404.html                        # Página de error 404 accesible y alineada con la marca
 ├── aas-stack.json                  # Manifiesto oficial de habilidades AAS (Schema Version 2)
 ├── AGENTS.md                       # Guía de contexto y estándares para agentes IA
-├── index.html                      # Marcado semántico HTML5, Open Graph, W3C compliant
-├── styles.css                      # CSS3 moderno, CSS Grid, Flexbox, clamp(), @media contrast/motion
+├── favicon.svg                     # Isotipo SVG accesible y compatible con dark/light mode
+├── index.html                      # Marcado semántico HTML5, Open Graph, Schema.org JSON-LD
 ├── robots.txt                      # Control de rastreo y bloqueo de bots de entrenamiento IA
-└── sitemap.xml                     # Mapa de sitio XML canónico
+├── site.webmanifest                # Manifiesto de aplicación web PWA
+├── sitemap.xml                     # Mapa de sitio XML canónico
+├── styles.css                      # CSS3 moderno, CSS Grid, Flexbox, clamp(), @media contrast/motion
+└── wrangler.jsonc                  # Configuración de Cloudflare Workers (Static Assets)
 ```
 
 ### Invariantes Técnicas:
 * **Cero JavaScript en Runtime:** Sin dependencias externas de JS para garantizar máxima velocidad, 100/100 en Core Web Vitals y nula superficie de ataque XSS.
+* **Despliegue con Cloudflare Workers:** Servido directamente como Cloudflare Workers Static Assets con compatibilidad de caché perimetral inmutable y cabeceras de seguridad estrictas mediante `_headers`.
 * **Tokens de Diseño CSS:** Variables en `:root` (`--aqua`, `--petrol`, `--ink`, `--mist`, etc.) con fluid typography mediante `clamp()`.
 * **Accesibilidad Universal (WCAG 2.1/2.2 AA):**
   * Skip-link (`#contenido`) para usuarios con lector de pantalla y teclado.
+  * Foco visible de alto contraste tanto en secciones claras como oscuras (`:focus-visible`).
   * Soporte nativo para `@media (prefers-reduced-motion: reduce)` y `@media (prefers-contrast: more)`.
   * Enlaces externos seguros con `target="_blank"` y `rel="noopener noreferrer"`.
-* **Optimización de Imágenes:** Atributos explícitos `width`, `height`, `fetchpriority="high"` en hero LCP, y `loading="lazy"` en imágenes bajo el pliegue.
+* **Optimización de Imágenes y Core Web Vitals:**
+  * Uso de `<picture>` con formato WebP como principal y fallback PNG, reduciendo el peso de la página en más de un 95%.
+  * Atributos explícitos `width`, `height`, `fetchpriority="high"` en hero LCP, y `loading="lazy"` con `decoding="async"` en imágenes bajo el pliegue.
 
 ---
 
@@ -69,8 +84,8 @@ El proyecto adopta el catálogo `agentic-awesome-skills@17.3.0` fijado por integ
 ### C. Integraciones, SEO Técnico y Redes Sociales
 - **`social-metadata-hardening`**: Endurecimiento de tarjetas Open Graph y Twitter Cards para previsualización enriquecida en WhatsApp.
 - **`seo-technical`**: Auditoría técnica de rastreabilidad, `robots.txt`, compatibilidad móvil y Core Web Vitals.
-- **`seo-sitemap`**: Validación y optimización de estructura de mapa del sitio XML.
-- **`schema-markup-generator`**: Implementación de datos estructurados JSON-LD (`MedicalBusiness`, `LocalBusiness`).
+- **`seo-sitemap`**: Validación y optimización de estructura de mapa del sitio XML canónico.
+- **`schema-markup-generator`**: Implementación de datos estructurados JSON-LD (`MedicalBusiness`, `Optician`, `WebSite`).
 - **`fixing-metadata`**: Auditoría y corrección de metadatos HTML (títulos, descripciones, etiquetas canónicas).
 
 ### D. Accesibilidad y Pruebas de Calidad
@@ -87,7 +102,7 @@ El proyecto adopta el catálogo `agentic-awesome-skills@17.3.0` fijado por integ
 - **`clean-code-guard`**: Validación de estándares SOLID, DRY, KISS y YAGNI.
 
 ### E. Seguridad y Privacidad Web
-- **`web-security-testing`**: Verificación de seguridad web (defensa contra tabnabbing, cabeceras seguras, HTTPS).
+- **`web-security-testing`**: Verificación de seguridad web (cabeceras CSP, HSTS, defensa contra tabnabbing).
 - **`seo-drift`**: Monitoreo de regresiones en directivas de rastreo de `robots.txt` y metadatos.
 - **`client-secret-exposure-audit`**: Auditoría preventiva contra fuga de credenciales o información confidencial en el frontend.
 
@@ -97,10 +112,11 @@ El proyecto adopta el catálogo `agentic-awesome-skills@17.3.0` fijado por integ
 - **`typography-first`**: Jerarquía editorial basada en tipografía fluida y legibilidad óptima.
 
 ### G. Despliegue, Operaciones y Mantenimiento
-- **`deploy-to-vercel`**: Despliegue y configuración en redes CDN perimetrales de alta disponibilidad.
+- **Cloudflare Workers (Static Assets)**: Configuración perimetral en `wrangler.jsonc` y cabeceras de borde en `_headers`.
+- **`deploy-to-vercel`**: Compatibilidad para despliegue alternativo en Vercel si se requiere.
 - **`deployment-procedures`**: Buenas prácticas de despliegue seguro, smoke testing y rollback.
 - **`shipping-and-launch`**: Lista de verificación pre-lanzamiento para entornos productivos.
-- **`seo-images`**: Análisis de optimización de imágenes (alt text, WebP, compresión y lazy loading).
+- **`seo-images`**: Optimización avanzada de imágenes (WebP, dimensiones explícitas, lazy loading y LCP prioritario).
 - **`git-pr-workflows-git-workflow`**: Orquestación de revisiones, ramas y pull requests.
 - **`git-advanced-workflows`**: Gestión de historial limpio y recuperación en Git.
 - **`commit`**: Convenciones semánticas estrictas de Conventional Commits.

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Ópticas Plaza">
+  <rect width="64" height="64" rx="14" fill="#111415"/>
+  <g transform="translate(0, 10)" fill="none" stroke="#2de6ea" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 16 9 29c1.8 4 6 6.6 10.4 6.6 5.2 0 9.5-3.5 10.8-8.4l1.8-6.7 1.8 6.7c1.3 4.9 5.6 8.4 10.8 8.4 4.4 0 8.6-2.6 10.4-6.6l6-13M5 17c8-5 17-6 27-1 10-5 19-4 27 1M30 21h4"/>
+  </g>
+</svg>

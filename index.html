@@ -7,13 +7,103 @@
   <meta name="description" content="Lleva un operativo oftalmológico profesional directamente a tu empresa. Evaluación visual, asesoría óptica y atención coordinada para tu equipo. Cotiza por WhatsApp.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#22dbe1">
+  <link rel="canonical" href="https://opticasplaza.cl/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
+  <meta property="og:site_name" content="Ópticas Plaza">
+  <meta property="og:url" content="https://opticasplaza.cl/">
   <meta property="og:title" content="Operativos oftalmológicos en tu empresa | Ópticas Plaza">
   <meta property="og:description" content="Cuidamos la salud visual de tu equipo sin salir de la empresa. Coordina tu operativo por WhatsApp.">
-  <meta property="og:image" content="operativo-visual-empresa.png">
-  <link rel="preload" as="image" href="operativo-visual-empresa.png" fetchpriority="high">
+  <meta property="og:image" content="https://opticasplaza.cl/images/operativo-visual-empresa.png">
+  <meta property="og:image:secure_url" content="https://opticasplaza.cl/images/operativo-visual-empresa.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Operativo oftalmológico en terreno para empresas realizado por Ópticas Plaza">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Operativos oftalmológicos en tu empresa | Ópticas Plaza">
+  <meta name="twitter:description" content="Cuidamos la salud visual de tu equipo sin salir de la empresa. Coordina tu operativo por WhatsApp.">
+  <meta name="twitter:image" content="https://opticasplaza.cl/images/operativo-visual-empresa.png">
+  <meta name="twitter:image:alt" content="Operativo oftalmológico en terreno para empresas realizado por Ópticas Plaza">
+
+  <link rel="preload" as="image" href="images/operativo-visual-empresa.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://opticasplaza.cl/#website",
+        "url": "https://opticasplaza.cl/",
+        "name": "Ópticas Plaza",
+        "description": "Operativos oftalmológicos para empresas y salud visual preventiva en terreno.",
+        "inLanguage": "es-CL"
+      },
+      {
+        "@type": ["MedicalBusiness", "Optician"],
+        "@id": "https://opticasplaza.cl/#organization",
+        "name": "Ópticas Plaza",
+        "url": "https://opticasplaza.cl/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://opticasplaza.cl/favicon.svg"
+        },
+        "image": "https://opticasplaza.cl/images/operativo-visual-empresa.png",
+        "description": "Operativos oftalmológicos profesionales en terreno para empresas. Evaluación visual y asesoría óptica para colaboradores sin salir de la empresa.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Chile"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "url": "https://wa.me/message/ECLLEMER5KLGH1",
+          "availableLanguage": "Spanish"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Salud Visual Corporativa",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Evaluación visual en terreno",
+                "description": "Revisión orientada a identificar las necesidades visuales de cada persona directamente en las instalaciones de la empresa."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Asesoría óptica personalizada",
+                "description": "Orientación clara para elegir soluciones acordes a cada necesidad de los colaboradores."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Gestión integral de la jornada",
+                "description": "Coordinación del espacio, los horarios y el flujo de colaboradores para una atención sin traslados ni interrupciones."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
@@ -31,7 +121,7 @@
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="#beneficios">Beneficios</a>
         <a href="#servicios">Servicios</a>
-        <a class="header-cta" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer">Cotizar operativo</a>
+        <a class="header-cta" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer" aria-label="Cotizar operativo por WhatsApp, abre en nueva pestaña">Cotizar operativo</a>
       </nav>
     </div>
   </header>
@@ -39,7 +129,10 @@
   <main id="contenido">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <img src="operativo-visual-empresa.png" alt="" width="1536" height="1024" fetchpriority="high">
+        <picture>
+          <source srcset="images/operativo-visual-empresa.webp" type="image/webp">
+          <img src="images/operativo-visual-empresa.png" alt="" width="1536" height="1024" fetchpriority="high">
+        </picture>
       </div>
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -47,7 +140,7 @@
           <h1 id="hero-title">Cuidamos la visión de tu equipo, <em>en tu empresa.</em></h1>
           <p class="hero-lead">Coordinamos operativos oftalmológicos profesionales para que tus colaboradores accedan a evaluación y asesoría visual sin traslados.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer" aria-label="Contactar a Ópticas Plaza por WhatsApp, abre en una pestaña nueva">
+            <a class="button button-primary" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer" aria-label="Contactar a Ópticas Plaza por WhatsApp, abre en nueva pestaña">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L0 24l6.5-1.7a11.9 11.9 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.1-3.5-8.4Zm-8.4 18.2c-1.7 0-3.4-.5-4.9-1.3l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.3A9.8 9.8 0 0 1 12.1 2c2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.5-4.4 9.9-9.8 9.9Zm5.4-7.4c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.4.2-.7.1-1.7-.9-2.9-1.6-4-3.6-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.6-.5-.8-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.2-.2-.5-.3-.8-.4Z"/></svg>
               Contactar por WhatsApp
             </a>
@@ -74,19 +167,28 @@
 
         <div class="benefit-grid">
           <article class="benefit-card">
-            <img class="benefit-photo" src="beneficio-empresa-v2.png" alt="Profesional instala equipos oftalmológicos junto a una coordinadora dentro de una empresa" width="1004" height="1667" loading="lazy">
+            <picture class="benefit-photo">
+              <source srcset="images/beneficio-empresa-v2.webp" type="image/webp">
+              <img src="images/beneficio-empresa-v2.png" alt="Profesional instala equipos oftalmológicos junto a una coordinadora dentro de una empresa" width="972" height="729" loading="lazy" decoding="async">
+            </picture>
             <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 40V18l17-9 17 9v22M16 40V27h16v13M3 40h42"/></svg></div>
             <h3>Vamos a tu empresa</h3>
             <p>Instalamos una estación de atención en terreno, reduciendo traslados e interrupciones para tu equipo.</p>
           </article>
           <article class="benefit-card featured">
-            <img class="benefit-photo" src="beneficio-coordinacion-v2.png" alt="Coordinador de empresa y profesional de salud visual organizan un operativo mediante una tablet" width="1122" height="1402" loading="lazy">
+            <picture class="benefit-photo">
+              <source srcset="images/beneficio-coordinacion-v2.webp" type="image/webp">
+              <img src="images/beneficio-coordinacion-v2.png" alt="Coordinador de empresa y profesional de salud visual organizan un operativo mediante una tablet" width="1122" height="842" loading="lazy" decoding="async">
+            </picture>
             <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="m15 24 6 6 13-14"/></svg></div>
             <h3>Coordinación sencilla</h3>
             <p>Te acompañamos antes y durante la jornada para organizar horarios, espacio y flujo de atención.</p>
           </article>
           <article class="benefit-card">
-            <img class="benefit-photo" src="beneficio-bienestar-v2.png" alt="Trabajador observa el resultado mientras una profesional ajusta sus nuevos anteojos" width="1004" height="1600" loading="lazy">
+            <picture class="benefit-photo">
+              <source srcset="images/beneficio-bienestar-v2.webp" type="image/webp">
+              <img src="images/beneficio-bienestar-v2.png" alt="Trabajador observa el resultado mientras una profesional ajusta sus nuevos anteojos" width="1003" height="752" loading="lazy" decoding="async">
+            </picture>
             <div class="icon-box" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 41S6 31.5 6 18.5A9.5 9.5 0 0 1 24 14a9.5 9.5 0 0 1 18 4.5C42 31.5 24 41 24 41Z"/></svg></div>
             <h3>Beneficio concreto</h3>
             <p>Acerca el cuidado preventivo y entrega una experiencia de bienestar apreciada por los colaboradores.</p>
@@ -98,7 +200,10 @@
     <section class="services section" id="servicios" aria-labelledby="services-title">
       <div class="container services-grid">
         <div class="services-image">
-          <img src="atencion-oftalmologica-corporativa.png" alt="Profesionales de salud visual explican una evaluación a un trabajador durante un operativo en su empresa" width="1456" height="1088" loading="lazy">
+          <picture>
+            <source srcset="images/atencion-oftalmologica-corporativa.webp" type="image/webp">
+            <img src="images/atencion-oftalmologica-corporativa.png" alt="Profesionales de salud visual explican una evaluación a un trabajador durante un operativo en su empresa" width="1448" height="1086" loading="lazy" decoding="async">
+          </picture>
           <div class="image-note"><strong>Atención en terreno</strong><span>Una jornada pensada para tu organización</span></div>
         </div>
 
@@ -111,7 +216,7 @@
             <li><span aria-hidden="true">02</span><div><h3>Asesoría óptica personalizada</h3><p>Orientación clara para elegir soluciones acordes a cada necesidad.</p></div></li>
             <li><span aria-hidden="true">03</span><div><h3>Gestión de la jornada</h3><p>Coordinación del espacio, los horarios y el flujo de colaboradores.</p></div></li>
           </ul>
-          <a class="button button-dark" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer">Quiero coordinar un operativo <span aria-hidden="true">→</span></a>
+          <a class="button button-dark" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer" aria-label="Quiero coordinar un operativo por WhatsApp, abre en nueva pestaña">Quiero coordinar un operativo <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -123,7 +228,7 @@
           <h2 id="cta-title">Tu próximo operativo visual comienza con un mensaje.</h2>
           <p>Cuéntanos sobre tu empresa y coordinemos una jornada para tu equipo.</p>
         </div>
-        <a class="button button-light" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp <span aria-hidden="true">→</span></a>
+        <a class="button button-light" href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Ópticas Plaza, abre en nueva pestaña">Escribir por WhatsApp <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>
@@ -139,7 +244,7 @@
       </div>
       <div>
         <h2>Contacto directo</h2>
-        <a href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer">WhatsApp Ópticas Plaza</a>
+        <a href="https://wa.me/message/ECLLEMER5KLGH1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Ópticas Plaza, abre en nueva pestaña">WhatsApp Ópticas Plaza</a>
         <p>Horario de atención:<br>consulta disponibilidad por WhatsApp.</p>
       </div>
       <div>
