@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "name": "opticas-plaza-stack",
+  "catalog": {
+    "package": "agentic-awesome-skills",
+    "version": "17.3.0",
+    "integrity": "sha256-22f3b35c33cfa3057bc4a713756852f1461624609655b99123bd3f0e6f26d613"
+  },
+  "targets": [
+    {
+      "host": "codex",
+      "scope": "project"
+    },
+    {
+      "host": "claude",
+      "scope": "project"
+    }
+  ],
+  "profile": {
+    "goals": [
+      "Deliver high-performance, mobile-first static landing page for corporate ophthalmological operatives in Chile",
+      "Maximize B2B conversion rate for HR managers seeking workplace visual health evaluations via WhatsApp",
+      "Ensure strict WCAG 2.1/2.2 AA accessibility including skip links, high-contrast, and reduced-motion modes",
+      "Maintain 100/100 Core Web Vitals, PageSpeed, and Lighthouse performance with zero runtime JavaScript dependencies",
+      "Enforce rigorous technical SEO, robots.txt AI training crawler governance, XML sitemap, and rich OpenGraph/WhatsApp cards",
+      "Implement schema.org JSON-LD structured data for local medical and corporate optical health services",
+      "Optimize and manage responsive WebP and PNG imagery with zero layout shifts and high fetch priority",
+      "Harden static web security against client-side secret exposure, reverse tabnabbing, and insecure headers",
+      "Maintain clean, modular HTML5 and modern CSS3 architecture with CSS custom property tokens and fluid typography",
+      "Automate resilient Git workflows, conventional commits, and pre-release production launch checklists"
+    ],
+    "projectType": "Corporate B2B Healthcare Landing Page (Pure Static Web / Zero-Dependency Vanilla Web)",
+    "languages": [
+      "HTML5",
+      "CSS3",
+      "SVG",
+      "XML"
+    ],
+    "frameworks": [
+      "Vanilla Web (Zero-Framework / Zero-Build)",
+      "CSS Custom Properties",
+      "WebP / Responsive Images",
+      "Schema.org JSON-LD",
+      "Open Graph Protocol"
+    ],
+    "constraints": [
+      "Zero external runtime JavaScript libraries or framework dependencies",
+      "Mobile-first responsive layout with fluid clamp() typography and CSS Grid",
+      "Direct WhatsApp click-to-chat integration (wa.me) for instant quote requests",
+      "Strict robots.txt Disallow directives for AI training crawlers (GPTBot, Google-Extended, Bytespider, CCBot)",
+      "External links must enforce rel=\"noopener noreferrer\" to prevent reverse tabnabbing",
+      "Images must define explicit width/height and fetchpriority/lazy loading to eliminate CLS",
+      "Full accessibility compliance with prefers-reduced-motion and prefers-contrast media queries"
+    ]
+  },
+  "skills": [
+    {
+      "id": "frontend-dev-guidelines"
+    },
+    {
+      "id": "frontend-ui-engineering"
+    },
+    {
+      "id": "fixing-metadata"
+    },
+    {
+      "id": "ckw-design"
+    },
+    {
+      "id": "design-system"
+    },
+    {
+      "id": "iconsax-library"
+    },
+    {
+      "id": "page-cro"
+    },
+    {
+      "id": "cro"
+    },
+    {
+      "id": "copywriting"
+    },
+    {
+      "id": "marketing-psychology"
+    },
+    {
+      "id": "social-metadata-hardening"
+    },
+    {
+      "id": "seo-technical"
+    },
+    {
+      "id": "seo-sitemap"
+    },
+    {
+      "id": "schema-markup-generator"
+    },
+    {
+      "id": "accesslint-audit"
+    },
+    {
+      "id": "fixing-accessibility"
+    },
+    {
+      "id": "frontend-lighthouse"
+    },
+    {
+      "id": "pagespeed-enhancer"
+    },
+    {
+      "id": "ui-visual-validator"
+    },
+    {
+      "id": "uxui-principles"
+    },
+    {
+      "id": "clean-code"
+    },
+    {
+      "id": "clean-code-guard"
+    },
+    {
+      "id": "web-security-testing"
+    },
+    {
+      "id": "seo-drift"
+    },
+    {
+      "id": "client-secret-exposure-audit"
+    },
+    {
+      "id": "design-taste-frontend"
+    },
+    {
+      "id": "card-based-design"
+    },
+    {
+      "id": "screen-reader-testing"
+    },
+    {
+      "id": "high-contrast"
+    },
+    {
+      "id": "fixing-motion-performance"
+    },
+    {
+      "id": "typography-first"
+    },
+    {
+      "id": "deploy-to-vercel"
+    },
+    {
+      "id": "deployment-procedures"
+    },
+    {
+      "id": "shipping-and-launch"
+    },
+    {
+      "id": "seo-images"
+    },
+    {
+      "id": "git-pr-workflows-git-workflow"
+    },
+    {
+      "id": "git-advanced-workflows"
+    },
+    {
+      "id": "commit"
+    },
+    {
+      "id": "copy-editing"
+    }
+  ]
+}
